@@ -18,5 +18,13 @@ public class CalculateScoreTest {
         Assert.assertEquals(3, userTotalScores);
     }
 
+    @Test
+    public void should_return_30_when_success_9times_and_fail_2times() {
+        CalculateScore calculateScore = new CalculateScore(2,9);
+
+        userTotalScores =calculateScore.calculate() + calculateScore.calculateExtra();
+
+        Assert.assertEquals(30, userTotalScores);
+    }
 
 }
