@@ -1,7 +1,7 @@
 package com.twschool.practice.domain.Service;
 
 import com.twschool.practice.Service.GameService;
-import com.twschool.practice.api.GameRepository;
+import com.twschool.practice.Repository.GameRepository;
 import com.twschool.practice.domain.GuessNumberGame;
 import org.junit.Test;
 import org.mockito.Mockito;

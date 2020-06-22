@@ -1,14 +1,17 @@
 package com.twschool.practice.domain.api;
 
+import com.twschool.practice.Service.GameService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @SpringBootTest
@@ -16,8 +19,16 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 public class GameControllerTest {
 
+    @MockBean
+    private GameService gameService;
+
     @Autowired
     private MockMvc mockMvc;
+
+    @Before
+    public void setUp()throws Exception{
+        Mockito.when(gameService.guess(Mockito.any())).thenReturn("4A0B");
+    }
 
     @Test
     public void should_return_result_result_when_guess_number() throws Exception{

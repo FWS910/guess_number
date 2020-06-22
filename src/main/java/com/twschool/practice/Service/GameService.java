@@ -1,6 +1,6 @@
 package com.twschool.practice.Service;
 
-import com.twschool.practice.api.GameRepository;
+import com.twschool.practice.Repository.GameRepository;
 import com.twschool.practice.domain.GuessNumberGame;
 import org.springframework.stereotype.Service;
 
